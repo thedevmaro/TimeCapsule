@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Time Capsule</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="card">
+        <header>
+            <h1>Future Time Capsule</h1>
+            <p>Write a message to your future self.</p>
+        </header>
+        <form>
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+            <label for="message">Your Future Message</label>
+            <textarea id="message" name="message" placeholder="Write something meaningful to your future self..." required></textarea>
+
+            <label for="year">Choose Year</label>
+            <select id="year" name="year">
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030" selected>2030</option>
+                <option value="2031">2031</option>
+                <option value="2032">2032</option>
+                <option value="2033">2033</option>
+                <option value="2034">2034</option>
+                <option value="2035">2035</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+        <footer>
+            <h5>This is a demo front-end only (no backend email sending).</h5>
+        </footer>
+        <div id="successMessage" class="success-message">Done</div>
+    </div>
+    </body>
+    <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var msg = document.getElementById('successMessage');
+        msg.classList.add('show');
+        setTimeout(function() {
+            msg.classList.remove('show');
+        }, 2500);
+        this.reset();
+    });
+    </script>
+</html>
